@@ -78,6 +78,7 @@ bool Adafruit_BNO055::begin(adafruit_bno055_opmode_t mode)
 
   /* Reset */
   write8(BNO055_SYS_TRIGGER_ADDR, 0x20);
+  delay(30);
   while (read8(BNO055_CHIP_ID_ADDR) != BNO055_ID)
   {
     delay(10);
